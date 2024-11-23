@@ -1,0 +1,118 @@
+---
+---
+<div id="loading-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-black">
+    <div class="text-center flex flex-col items-center">
+        <div class="relative w-64 h-64 mb-6 image-container">
+            <img 
+                id="pan1"
+                class="absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-500"
+                src="../../public/FiverrPack/pan1.jpg" 
+                alt="Loading Image 1"
+            />
+            <img 
+                id="pan2"
+                class="absolute inset-0 w-full h-full object-cover rounded-lg opacity-0 transition-opacity duration-500"
+                src="../../public/FiverrPack/pan2.jpg" 
+                alt="Loading Image 2"
+            />
+        </div>
+        <p id="loading-text" class="text-purple-400 text-2xl font-bold">
+            Preparando DagerWeb...
+        </p>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('load', () => {
+        const loadingScreen = document.getElementById('loading-screen');
+        const pan1 = document.getElementById('pan1');
+        const pan2 = document.getElementById('pan2');
+        const loadingText = document.getElementById('loading-text');
+
+        // Primero cambiamos la imagen y el texto
+        setTimeout(() => {
+            if (pan1 && pan2 && loadingText) {
+                pan1.classList.add('opacity-0');
+                pan2.classList.remove('opacity-0');
+                loadingText.textContent = '¡Bienvenido al Antro de Dager!';
+                loadingText.classList.add('text-purple-500');
+            }
+        }, 2000);
+
+        // Después de mostrar la segunda imagen, removemos la pantalla de carga
+        setTimeout(() => {
+            loadingScreen?.classList.add('opacity-0');
+            setTimeout(() => {
+                loadingScreen?.remove();
+            }, 500);
+        }, 3000);
+    });
+</script>
+
+<style>
+    #loading-screen {
+        transition: opacity 0.5s ease-out;
+    }
+
+    .image-container {
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+    }
+
+    /* Transiciones suaves para las imágenes */
+    #pan1, #pan2 {
+        will-change: opacity, transform;
+    }
+
+    /* Efecto de resplandor para las imágenes */
+    .image-container {
+        position: relative;
+    }
+
+    .image-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+        animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+        from {
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+        }
+        to {
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.8);
+        }
+    }
+
+    /* Eliminar la animación del texto */
+    #loading-text {
+        transition: all 0.5s ease-out;
+    }
+
+    #loading-screen{
+        background-image: linear-gradient(
+				to bottom,
+				rgba(0, 0, 0, 0.8),
+				rgba(0, 0, 0, 0.8)
+			),
+			url("../../public/FiverrPack/carga.jpg");
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+    }
+</style>

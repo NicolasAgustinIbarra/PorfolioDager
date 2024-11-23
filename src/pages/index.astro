@@ -1,0 +1,434 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import LoadingScreen from "../components/LoadingScreen.astro";
+
+import Badge from "../components/Badge.astro";
+import Layout from "../layouts/Layout.astro";
+import GitHub from "../components/Icons/GitHub.astro";
+import LinkInd from "../components/Icons/LinkInd.astro";
+import Resume from "../components/Icons/Resume.astro";
+import MailIcon from "../components/Icons/MailIcon.astro";
+import Code from "../components/Icons/Code.astro";
+import Proyects from "../components/Proyects.astro";
+
+import SocialPill from "../components/SocialPill.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import MyStack from "../components/MyStack.astro";
+import Cursos from "../components/Cursos.astro";
+import Twitch from "../components/Icons/Twitch.astro";
+import Twitter from "../components/Icons/Twitter.astro";
+import Spotify from "../components/Icons/Spotify.astro";
+import Tiktok from "../components/Icons/Tiktok.astro";
+import HoverImage from "../components/HoverImage.astro";
+---
+
+<Layout title="Dot Dager | Full-Stack/Lead Developer">
+    <LoadingScreen />
+
+    <ViewTransitions />
+    <main id="inicio" class="px-4 md:px-8 lg:px-16 max-w-screen-xl mx-auto">
+        <SectionContainer
+            class="items-center justify-center flex flex-col mt-10"
+        >
+            <a
+                href="https://www.youtube.com/@DotDager"
+                target="_blank"
+                rel="noopener"
+                class="flex justify-center items-center"
+            >
+                <img
+                    class="perfil rounded-full w-32 h-32 md:w-40 md:h-40 mb-8 cursor-pointer"
+                    src="../../public/FiverrPack/perfil.png"
+                    alt="dager foto"
+                    transition:name="profile"
+                />
+            </a>
+
+            <h1
+                class="text-white text-3xl md:text-4xl lg:text-5xl font-bold text-center flex flex-col md:flex-row items-center gap-4 pb-6 lg:pb-10"
+                transition:animate="slide"
+            >
+                ¡Hola! Soy <span id="dotDager">Dot Dager</span>
+                <span id="pepino">🥒</span>
+            </h1>
+            <h2
+                class="text-lg md:text-xl lg:text-2xl text-center max-w-[700px] text-pretty"
+            >
+                <span class="">Programador </span>
+                ,
+                <span class=""> músico </span>
+                ,
+                <span class=""> filósofo </span>
+                y contador serial de chistes de
+                <span class="text-purple-400"> mierda. </span> ¿Buscabas algo más
+                pibe? Hago que el código
+                <span class="text-purple-400">funcione</span>
+                <span class="opacity-60"> (cuando quiere) </span>, que la música
+                <span class="text-purple-400">suene</span>
+                y que los chistes de doble sentido te hagan pensar si deberías reírte
+                o
+                <span class="opacity-50"> denunciarme. </span>
+                En mi canal mezclo
+                <span class="text-purple-500"> programación, </span>
+                <span class="text-purple-500"> falopa </span>, y muchas
+                referencias a los
+                <span class="text-purple-500"> pepinos. </span>
+            </h2>
+
+            <nav class="flex py-4 gap-4 flex-wrap justify-center mt-1">
+                <SocialPill
+                    href="https://www.linkedin.com/in/mariano-luis-villa/"
+                >
+                    <LinkInd class="size-4 md:size-6" />
+                    LinkInd
+                </SocialPill>
+                <SocialPill href="https://github.com/MarianoVilla">
+                    <GitHub class="size-4 md:size-6" />
+                    GitHub
+                </SocialPill>
+                <SocialPill href="https://www.youtube.com/@DotDager">
+                    <Resume class="size-4 md:size-6" />
+                    Youtube
+                </SocialPill>
+                <SocialPill href="https://www.twitch.tv/dagerxiv">
+                    <Twitch class="size-4 md:size-6" />
+                    Twitch
+                </SocialPill>
+                <SocialPill href="https://x.com/Dager_32">
+                    <Twitter class="size-4 md:size-6" />
+                    X
+                </SocialPill>
+                <SocialPill
+                    href="https://open.spotify.com/intl-es/artist/6bkClBMJd4qKxJp0J5vHsz?si=mbfNHqvBT9SKSQ-ZNhXHJg&nd=1"
+                >
+                    <Spotify class="size-4 md:size-6" />
+                    Spotify
+                </SocialPill>
+                <SocialPill href="https://www.tiktok.com/@elantrodedager">
+                    <Tiktok class="size-4 md:size-6" />
+                    Tiktok
+                </SocialPill>
+                <SocialPill href="https://www.youtube.com/c/DagerMusic">
+                    <Resume class="size-4 md:size-6" />
+                    Música
+                </SocialPill>
+                <SocialPill href="https://www.youtube.com/@DotDager">
+                    <Resume class="size-4 md:size-6" />
+                    Instagram
+                </SocialPill>
+            </nav>
+        </SectionContainer>
+
+        <h2
+            id="sobremi"
+            class="text-2xl md:text-3xl font-semibold"
+            transition:animate="fade"
+        >
+            Sobre mi:
+        </h2>
+        <SectionContainer class="flex flex-col md:flex-row gap-8">
+            <!-- <HoverImage
+                image1="../../public/FiverrPack/cartonero1.jpg"
+                image2="../../public/FiverrPack/cartonero2.jpg"
+                alt1="Pan inicial"
+                alt2="Pan final"
+                className="mb-8 shadow-xl"
+            /> -->
+            <img
+                class="rounded-lg shadow-lg w-auto h-64 transform hover:scale-105 transition-transform duration-500 hover:-rotate-2"
+                src="../../public/FiverrPack/cartonero12.png"
+                alt="Primera imagen"
+                transition:name="barba"
+            />
+            <p
+                class="text-base md:text-lg mb-4 text-pretty"
+                transition:animate="slide"
+            >
+                Mi nombre es <span class="text-purple-400"
+                    >Mariano Luís Villa</span
+                >, soy un desarrollador de software normalito,
+                <span class="text-purple-600"> hace más de 8 años </span> que estoy
+                en este antro y hace aproximadamente más de 2 que me convertí en
+                el mejor youtuber del mundo.
+            </p>
+        </SectionContainer>
+        <SectionContainer class="yutun flex md:flex-row flex-wrap gap-4">
+            <iframe
+                width="100%"
+                height="315"
+                src="https://www.youtube.com/embed/2ldfU8vvG1s?si=hjDcrVn6SMbhCMfU"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+            <iframe
+                width="100%"
+                height="315"
+                src="https://www.youtube.com/embed/dRS177CMgAA?si=guMdx5uYqI8waii-"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+        </SectionContainer>
+        <SectionContainer class="flex flex-col md:flex-row gap-8">
+            <p
+                class="text-base md:text-lg mb-4 text-pretty"
+                transition:animate="slide"
+            >
+                Amo los <span class="text-purple-400">gatos</span>,
+                principalmente esos deambulan libremente por los
+
+                <span class="text-purple-600"> bosques de Palermo. </span> En su
+                compañía, encuentro la paz. Siempre busco rodearme de <span
+                    class="text-purple-600"
+                >
+                    mis amigos felinos
+                </span>, ya que para mi, es la combinación perfecta para las
+                tardes de relax.
+            </p>
+            <img
+                class="rounded-lg shadow-lg w-auto h-64 transform hover:scale-105 transition-transform duration-500 hover:rotate-2"
+                src="../../public/FiverrPack/gato.jpg"
+                alt="Primera imagen"
+                transition:name="gato"
+            />
+        </SectionContainer>
+    </main>
+    <SectionContainer class="flex flex-col md:flex-row gap-8 p-4">
+        <img
+            class="rounded-lg shadow-lg w-auto h-64 transform hover:scale-105 transition-transform duration-500 hover:-rotate-2"
+            src="../../public/FiverrPack/barba.png"
+            alt="Primera imagen"
+            transition:name="barba"
+        />
+        <p class="text-base md:text-lg mb-4 text-pretty">
+            En mis tiempos libre soy<span class="text-purple-400">
+                músico
+            </span>, me gusta experimentar con los
+            <span class="text-purple-600">instrumentos</span>, principalmente la
+            guitarra, me fascina manosear el capo <span class="text-purple-600"
+                >traste</span
+            > y jugar con las diferentes tonalidades
+        </p>
+    </SectionContainer>
+    <SectionContainer class="yutun flex md:flex-row flex-wrap gap-8 p-4">
+        <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/LU_ycG_1VYs?si=hWtTXL8TFYel3B-C"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/lO1z8TARfro"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </SectionContainer>
+
+    <SectionContainer class="lumber flex flex-col items-center justify-center p-4">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-6">
+            Disfruta de mi juego favorito:
+        </h2>
+        <h2 class="text-2xl md:text-3xl mb-6">"El leñador de falos" 😏</h2>
+        <iframe
+            title="Lumber Jack Game"
+            src="https://tbot.xyz/lumber/"
+            width="400"
+            height="600"
+            class="mx-auto"
+        >
+        </iframe>
+    </SectionContainer>
+    <audio autoplay>
+        <source src="../../public/cancion.mp3" type="audio/mpeg" />
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+</Layout>
+
+<style>
+    /* Estilo general para centrar la página */
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center; /* Centra el contenido de texto */
+    }
+
+    /* Estilo para los contenedores de videos */
+    .yutun {
+        display: flex;
+        justify-content: center; /* Centra los videos horizontalmente */
+        gap: 1rem; /* Espacio entre los videos */
+        flex-wrap: wrap; /* Permite que los elementos se ajusten en una nueva línea */
+    }
+
+    /* Estilo específico para dispositivos móviles */
+    @media (max-width: 768px) {
+        .yutun {
+            flex-direction: column; /* Coloca los videos en una columna */
+            align-items: center; /* Centra los videos */
+            gap: 2rem; /* Aumenta el espacio entre los videos en móviles */
+        }
+
+        iframe {
+            width: 100%; /* Asegura que los videos ocupen todo el ancho disponible */
+            max-width: 360px; /* Limita el ancho máximo del video */
+            height: auto; /* Ajusta la altura automáticamente */
+        }
+    }
+
+    img {
+        cursor: pointer;
+    }
+
+    /* Animaciones base */
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: -70%;
+        }
+        100% {
+            background-position: 170%;
+        }
+    }
+
+    /* Estilos mejorados para imágenes */
+    .perfil {
+        animation: float 6s ease-in-out infinite;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .perfil:hover {
+        animation: pulse 1.5s ease-in-out infinite;
+        filter: drop-shadow(0 0 2rem rgb(168, 85, 247));
+    }
+
+    .imagen-container {
+        width: 250px;
+        height: auto;
+        overflow: hidden;
+    }
+
+    /* .imagen-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .imagen-hover,
+        .imagen-hover-secondary {
+            width: 250px;
+            height: auto;
+        }
+        .imagen-container:hover .imagen-hover {
+            opacity: 0;
+            transform: scale(1.1);
+        }
+
+        .imagen-container:hover .imagen-hover-secondary {
+            opacity: 1;
+            transform: scale(1);
+        } */
+    /* Animación para el pepino */
+    @keyframes bounce-rotate {
+        0%,
+        100% {
+            transform: translateY(0) rotate(0deg);
+        }
+        25% {
+            transform: translateY(-10px) rotate(10deg);
+        }
+        75% {
+            transform: translateY(-5px) rotate(-10deg);
+        }
+    }
+
+    #pepino {
+        display: inline-block;
+        animation: bounce-rotate 2s ease-in-out infinite;
+        transform-origin: center;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    #pepino:hover {
+        animation-play-state: paused;
+        transform: scale(1.2);
+    }
+
+    /* Aseguramos que el contenedor de imágenes sea responsive */
+    /* @media (max-width: 768px) {
+            .imagen-container {
+                width: 100%;
+                height: 350px;
+            }
+        } */
+
+    /* Efecto de título mejorado */
+    #dotDager {
+        background: linear-gradient(90deg, #7928ca, #2e0e4e, #7928ca);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shimmer 3s linear infinite;
+        line-height: 1.2;
+        padding-bottom: 2px;
+    }
+
+    /* Animaciones para View Transitions */
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none;
+        mix-blend-mode: normal;
+    }
+
+    /* Animación para imágenes con transition:name */
+    ::view-transition-old(profile),
+    ::view-transition-new(profile),
+    ::view-transition-old(cartonero),
+    ::view-transition-new(cartonero),
+    ::view-transition-old(gato),
+    ::view-transition-new(gato),
+    ::view-transition-old(barba),
+    ::view-transition-new(barba) {
+        animation: fade 0.5s ease-in-out;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+</style>
